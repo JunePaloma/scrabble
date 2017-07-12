@@ -1,7 +1,23 @@
 class Scrabble
+attr_reader @point_values,
+            @score,
+            @word
 
-  def score(word)
-    1
+  def initialize(word)
+    @word = word
+end
+
+def break_word_into_an_array(word)
+  word_array = word.chars
+end
+
+def add_up_string_values(word_array)
+
+  #this should give
+end
+
+  def score(word_array)
+  # increment count count = sum of the values from the points hash for the word
   end
 
   def point_values
@@ -15,4 +31,9 @@ class Scrabble
       "Y"=>4, "Z"=>10
     }
   end
+
+
+
+
+
 end
