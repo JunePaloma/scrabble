@@ -11,14 +11,16 @@ class ScrabbleTest < Minitest::Test
   end
 
   def test_it_creates_an_array
-    newword = Scrabble.new
+    newword = Scrabble.new("hello")
     expected = ["h", "e", "l", "l", "o"]
-    actual = Scrabble.new.break_word_into_an_array("hello")
+    actual = newword.break_word_into_an_array("hello")
     assert_equal expected, actual
   end
 
   def test_it_can_score_a_word
+    assert_equal [1,2,1,1,1], Scrabble.new.get_individaul_letters(["h","e","l","l","o"])
   end
 
-  
+def test_it_can_sum_a_word_score
+  assert_equal 8, Scrabble.new.word_score([1,2,1,1,1])
 end
